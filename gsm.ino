@@ -13,7 +13,7 @@ void loop(){
   if(Serial.available()) // GSm establish connection then we are good to go
   {
     byte a =Serial.read();
-    if(a=='#')
+    if(a=='$')
     {
       gsm.write((char)26); ///hexadeciaml value for Ctrl+z== to tell the GSM its the end of the message..
    
@@ -28,7 +28,7 @@ void loop(){
 
   //AT+CMGF=1 to start messaging service on gsm
   //AT+CMGS="+9195601XXXXX" Enter the no you want to send text message
-  // than enter message followed by #.
+  // than enter message followed by $.
   //IF get OK then our message is succesfully send..
 
   //AT+CNMI=2,2,0,0,0 if you want to receive message using GSM
